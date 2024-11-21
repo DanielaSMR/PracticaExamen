@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RestauranteActivity"
+    android:background="@color/background"
+    >
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/texto"
+        android:textSize="50sp"
+        android:text="@string/nombre_rest"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toTopOf="@id/puerta4per"/>
+        <!--Si no esta el constraint no se hara el margin-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/puerta2per"
+        android:layout_width="110dp"
+        android:layout_height="140dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/elementoSelec"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/intNombre"
+        >
+
+
+    <!--Linear Layaout para meter los objetos que estaran dentro del cardView-->
+        <!--Con match_parent-->
+        <!--Poner la orientacion a la que queremos ordenar los objetos-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!--Para imagenes añadir el tamaño personalizado
+        Para teñir la imagen utilizar tint-->
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="90dp"
+            android:src="@drawable/puerta"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dosPer"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            />
+
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/puerta4per"
+        android:layout_width="110dp"
+        android:layout_height="140dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/cajaText"
+        app:layout_constraintRight_toLeftOf="@id/puerta8per"
+        app:layout_constraintLeft_toRightOf="@id/puerta2per"
+        app:layout_constraintBottom_toTopOf="@id/intNombre"
+        >
+
+
+        <!--Linear Layaout para meter los objetos que estaran dentro del cardView-->
+        <!--Con match_parent-->
+        <!--Poner la orientacion a la que queremos ordenar los objetos-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!--Para imagenes añadir el tamaño personalizado
+            Para teñir la imagen utilizar tint-->
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="90dp"
+                android:src="@drawable/puerta"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cuatroPer"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/puerta8per"
+        android:layout_width="110dp"
+        android:layout_height="140dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/cajaText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/intNombre"
+        >
+
+
+        <!--Linear Layaout para meter los objetos que estaran dentro del cardView-->
+        <!--Con match_parent-->
+        <!--Poner la orientacion a la que queremos ordenar los objetos-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!--Para imagenes añadir el tamaño personalizado
+            Para teñir la imagen utilizar tint-->
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="90dp"
+                android:src="@drawable/puerta"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ochoPer"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/intNombre"
+        android:layout_width="365dp"
+        android:layout_height="60dp"
+        android:layout_margin="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/elecHoras"
+        app:cardBackgroundColor="@color/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:orientation="vertical">
+            <!--El text view se pone wrap_content-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tituloText"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textColor="@color/texto" />
+
+            <!--Edit text para escribir cosas en el programa
+            Se utiliza width=Match_parent y height = Wrap_content
+            Importante poner
+                inputType=textCapSenteces
+                SingleLine = true
+                maxLines = 1
+            -->
+            <EditText
+                android:id="@+id/nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences|textAutoCorrect"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:background="@color/cajaText"
+                android:text="Name..."
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <!--El background de las cartas se utiliza cardBackgraound-->
+    <!--El tamaño que tu quieras-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/elecHoras"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="20dp"
+        app:cardBackgroundColor="@color/cajaText">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <!-- Float acting button para estas ocasiones como bajar o subir horas-->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/botonIzquierda"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/arrow_left"
+                app:maxImageSize="60dp"
+                />
+
+            <TextView
+                android:id="@+id/horas"
+                android:layout_width="135dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/horas"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                />
+
+            <!--src para meter imagenes-->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/botonDerecha"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/arrow_right"
+                app:maxImageSize="60dp"
+                />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Selecminutos"
+        android:layout_width="365dp"
+        android:layout_height="70dp"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/elecHoras"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:cardBackgroundColor="@color/background"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/minutos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/texto"
+                android:text="20:00"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                />
+            <!--Para barra de seleccion Slider
+                Se pone match parent y wrap content
+                thumbColor: color de la bolita
+                trackColor: color del palo-->
+            <com.google.android.material.slider.Slider
+                android:id="@+id/barraMin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:haloRadius="10dp"
+                android:valueFrom="00"
+                android:valueTo="59"
+                app:thumbColor="#6D6B6B"
+                app:trackColor="@color/cajaText"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    
+    <!--El Compat Button lo personalizas como quieras -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/botonFinal"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/check"
+        app:maxImageSize="60dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

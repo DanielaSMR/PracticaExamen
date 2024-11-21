@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PracticaExamen</string>
+    <string name="nombre_rest">Begin</string>
+    <string name="horas">20:00</string>
+    <string name="tituloText">Introduce tu nombre</string>
+    <string name="dosPer">2 personas</string>
+    <string name="cuatroPer">4 personas</string>
+    <string name="ochoPer">8 personas</string>
+
+</resources>
